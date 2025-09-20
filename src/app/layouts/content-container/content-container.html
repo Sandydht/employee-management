@@ -1,1 +1,11 @@
-<router-outlet></router-outlet>
+<div class="w-full min-h-screen max-h-screen flex items-start justify-start">
+  <app-sidebar class="w-auto"></app-sidebar>
+
+  <div class="w-full h-auto flex flex-col items-start justify-start">
+    <app-appbar class="w-full"></app-appbar>
+
+    <div class="w-full h-auto min-h-[calc(100vh-68px)] max-h-[calc(100vh-68px)] overflow-y-auto p-[25px] bg-gray-200">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
