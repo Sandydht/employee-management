@@ -1,0 +1,21 @@
+@if (isLoading) {
+  <button
+    type="butto "
+    [disabled]="true"
+    class="w-full h-auto min-h-[44px] max-h-[44px] rounded-lg overflow-hidden px-[15px] py-[5px] text-center text-[14px] leading-[20px] font-medium text-white cursor-not-allowed bg-gray-400"
+  >
+    Loading...
+  </button>
+} @else {
+  <button
+    [type]="type"
+    [disabled]="disabled"
+    class="w-full h-auto min-h-[44px] max-h-[44px] rounded-lg overflow-hidden px-[15px] py-[5px] text-center text-[14px] leading-[20px] font-medium text-white"
+    [ngClass]="{
+      'cursor-pointer bg-linear-to-t from-sky-500 to-indigo-500': !disabled,
+      'cursor-not-allowed bg-gray-400': disabled
+    }"
+  >
+    {{label}}
+  </button>
+}
