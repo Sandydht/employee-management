@@ -19,6 +19,23 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadComponent: () => import('./pages/dashboard/dashboard').then((c) => c.Dashboard)
+      },
+      {
+        path: 'employee',
+        loadComponent: () => import('./pages/employee/employee').then((c) => c.Employee)
+      },
+      {
+        path: 'report',
+        children: [
+          {
+            path: 'payroll',
+            loadComponent: () => import('./pages/report/payroll/payroll').then((c) => c.Payroll)
+          },
+          {
+            path: 'attendance',
+            loadComponent: () => import('./pages/report/attendance/attendance').then((c) => c.Attendance)
+          },
+        ]
       }
     ]
   }

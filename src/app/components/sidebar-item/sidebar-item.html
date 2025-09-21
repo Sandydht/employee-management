@@ -1,0 +1,24 @@
+<a
+  [routerLink]="link"
+  class="w-full h-auto flex items-center justify-start gap-[10px] text-left text-[16px] leading-[24px] font-medium text-[#6d6d6d] rounded-lg px-[20px] py-[10px] transition-all cursor-pointer hover:bg-gray-200"
+  [ngClass]="{
+    'bg-linear-to-t from-sky-500 to-indigo-500 text-white': isActive,
+    'bg-none': !isActive
+  }"
+>
+  @if (isActive) {
+    <img 
+      [src]="activeIcon"
+      [alt]="`${label} icon`"
+      loading="lazy"
+    />
+  } @else {
+    <img 
+      [src]="inactiveIcon"
+      [alt]="`${label} icon`"
+      loading="lazy"
+    />
+  }
+
+  {{label}}
+</a>
