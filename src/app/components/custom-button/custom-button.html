@@ -7,15 +7,31 @@
     Loading...
   </button>
 } @else {
-  <button
-    [type]="type"
-    [disabled]="disabled"
-    class="w-full h-auto min-h-[44px] max-h-[44px] rounded-lg overflow-hidden px-[15px] py-[5px] text-center text-[14px] leading-[20px] font-medium text-white"
-    [ngClass]="{
-      'cursor-pointer bg-linear-to-t from-sky-500 to-indigo-500': !disabled,
-      'cursor-not-allowed bg-gray-400': disabled
-    }"
-  >
-    {{label}}
-  </button>
+  @if (buttonType == 'primary') {
+    <button
+      [type]="type"
+      [disabled]="disabled"
+      class="w-full h-auto min-h-[44px] max-h-[44px] rounded-lg overflow-hidden px-[15px] py-[5px] text-center text-[14px] leading-[20px] font-medium text-white transition-all hover:opacity-85"
+      [ngClass]="{
+        'cursor-pointer bg-linear-to-t from-sky-500 to-indigo-500': !disabled,
+        'cursor-not-allowed bg-gray-400': disabled
+      }"
+      (click)="onClick()"
+    >
+      {{label}}
+    </button>
+  } @else {
+    <button
+      [type]="type"
+      [disabled]="disabled"
+      class="w-full h-auto min-h-[44px] max-h-[44px] rounded-lg overflow-hidden px-[15px] py-[5px] text-center text-[14px] leading-[20px] font-medium text-[#6d6d6d] transition-all border-[2px] border-[#6d6d6d] hover:bg-[#f6f6f6]"
+      [ngClass]="{
+        'cursor-pointer bg-white': !disabled,
+        'cursor-not-allowed bg-gray-400': disabled
+      }"
+      (click)="onClick()"
+    >
+      {{label}}
+    </button>
+  }
 }
