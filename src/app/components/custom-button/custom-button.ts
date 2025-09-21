@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-custom-button',
@@ -12,4 +12,11 @@ export class CustomButton {
   @Input() disabled?: boolean = false;
   @Input() isLoading: boolean = false;
   @Input() label: string = '';
+  @Input() buttonType?: 'primary' | 'secondary' = 'primary';
+
+  @Output() eventClick: EventEmitter<void> = new EventEmitter<void>();
+
+  onClick(): void {
+    this.eventClick?.emit();
+  }
 }
