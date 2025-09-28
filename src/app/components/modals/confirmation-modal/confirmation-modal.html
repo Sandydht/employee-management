@@ -23,6 +23,7 @@
           label="Confirm"
           buttonType="primary"
           class="w-full h-auto"
+          [isLoading]="isLoading || false"
           (eventClick)="onConfirm()"
         ></app-custom-button>
       </div>

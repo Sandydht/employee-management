@@ -27,6 +27,7 @@
   <app-confirmation-modal
     title="Logout Confirmation"
     message="Are you sure you want to log out? You will need to sign in again to continue."
+    [isLoading]="isLoadingLogout"
     (cancelAction)="cancelLogoutConfirmationModalBox()"
     (confirmAction)="confirmLogoutConfirmationModalBox()"
   ></app-confirmation-modal>

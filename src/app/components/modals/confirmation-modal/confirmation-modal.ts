@@ -12,6 +12,7 @@ import { CustomButton } from '../../custom-button/custom-button';
 export class ConfirmationModal {
   @Input() title: string = '';
   @Input() message: string = '';
+  @Input() isLoading?: boolean = false;
 
   @Output() cancelAction = new EventEmitter();
   @Output() confirmAction = new EventEmitter();
