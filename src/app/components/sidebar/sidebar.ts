@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
 import { SidebarItem } from "../sidebar-item/sidebar-item";
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Menus } from '../../models/menus';
 import { SidebarItemMultiple } from "../sidebar-item-multiple/sidebar-item-multiple";
 
 @Component({
   selector: 'app-sidebar',
-  imports: [SidebarItem, SidebarItemMultiple],
+  imports: [
+    SidebarItem, 
+    SidebarItemMultiple,
+    RouterLink
+  ],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css'
 })

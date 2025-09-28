@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, input, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { ChildMenu } from '../../models/menus';
 
@@ -7,7 +7,7 @@ import { ChildMenu } from '../../models/menus';
   selector: 'app-sidebar-item-multiple',
   imports: [
     NgClass,
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './sidebar-item-multiple.html',
   styleUrl: './sidebar-item-multiple.css'

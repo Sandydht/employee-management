@@ -1,14 +1,17 @@
 <div class="w-full h-auto min-h-screen max-h-screen flex flex-col items-start justify-start">
-  <div class="w-full h-auto flex items-center justify-center p-[25px]">
+  <a 
+    routerLink="/"
+    class="w-full h-auto flex items-center justify-center p-[25px] cursor-pointer"
+  >
     <img 
       src="assets/images/png/logo.png" 
       alt="Employee Management logo" 
       loading="lazy"
       class="w-full min-w-[200px] max-w-[200px] h-auto" 
     />
-  </div>
+  </a>
 
-  <div class="w-full h-auto min-h-[calc(100vh-127.34px)] max-h-[calc(100vh-127.34px)] overflow-y-auto px-[25px] pb-[25px] flex flex-col items-start justify-start gap-[5px]">
+  <div class="w-full h-auto min-h-[calc(100vh-127.34px)] max-h-[calc(100vh-127.34px)] overflow-y-auto px-[25px] pb-[25px] pt-[15px] flex flex-col items-start justify-start gap-[5px]">
     @for (sidebarItem of sidebarData; track $index) {
       @if (sidebarItem.link && sidebarItem.child.length < 1) {
         <app-sidebar-item 

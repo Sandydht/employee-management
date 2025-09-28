@@ -1,7 +1,7 @@
 <div class="w-full h-auto flex flex-col items-start justify-start gap-[5px]">
   <label 
     [for]="id"
-    class="text-left text-[14px] leading-[20px] text-black font-medium"
+    class="text-left text-[14px] leading-[20px] text-[#6d6d6d] font-medium"
   >
     {{label}}
   </label>
@@ -11,7 +11,7 @@
     [name]="id"
     [type]="type"
     [placeholder]="placeholder" 
-    class="w-full h-auto min-h-[44px] max-h-[44px] border-[1px] px-[15px] py-[5px] rounded-lg text-left text-[12px] leading-[16px] text-black overflow-hidden focus:outline-0 focus-within:outline-0"
+    class="w-full h-auto min-h-[44px] max-h-[44px] border-[1px] border-gray-400 px-[15px] py-[5px] rounded-lg text-left text-[12px] leading-[16px] text-[#6d6d6d] overflow-hidden focus:outline-0 focus-within:outline-0"
     [value]="value"
     (input)="onChange($event.target.value)"
     (blur)="onTouched()"

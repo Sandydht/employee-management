@@ -1,10 +1,10 @@
 <div class="w-full h-auto flex flex-col items-start justify-start gap-[5px]">
   <button
     type="button"
-    class="w-full h-auto px-[20px] rounded-lg py-[10px] text-left text-[16px] leading-[24px] font-medium text-[#6d6d6d] flex items-center justify-between gap-[10px] cursor-pointer transition-all hover:bg-gray-200"
+    class="w-full h-auto px-[20px] rounded-lg py-[10px] text-left text-[16px] leading-[24px] font-medium text-[#6d6d6d] flex items-center justify-between gap-[10px] cursor-pointer transition-all"
     [ngClass]="{
-      'bg-linear-to-t from-sky-500 to-indigo-500 text-white': isActive,
-      'bg-none': !isActive
+      'bg-blue-500 text-white hover:opacity-85': isActive,
+      'bg-none hover:bg-gray-200': !isActive
     }" 
     (click)="toggleShowDropdown()"
   >

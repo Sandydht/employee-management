@@ -1,9 +1,9 @@
 <a
   [routerLink]="link"
-  class="w-full h-auto flex items-center justify-start gap-[10px] text-left text-[16px] leading-[24px] font-medium text-[#6d6d6d] rounded-lg px-[20px] py-[10px] transition-all cursor-pointer hover:bg-gray-200"
+  class="w-full h-auto flex items-center justify-start gap-[10px] text-left text-[16px] leading-[24px] font-medium text-[#6d6d6d] rounded-lg px-[20px] py-[10px] transition-all cursor-pointer"
   [ngClass]="{
-    'bg-linear-to-t from-sky-500 to-indigo-500 text-white': isActive,
-    'bg-none': !isActive
+    'bg-blue-500 text-white hover:opacity-85': isActive,
+    'bg-none hover:bg-gray-200': !isActive
   }"
 >
   @if (isActive) {
