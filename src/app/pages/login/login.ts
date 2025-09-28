@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { passwordValidator } from '../../validators/password.validator';
 import { CustomInput } from '../../components/custom-input/custom-input';
 import { CustomInputPassword } from '../../components/custom-input-password/custom-input-password';
 import { CommonModule } from '@angular/common';
@@ -34,7 +33,7 @@ export class Login {
   ) {
     this.loginForm = this.fromBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, passwordValidator()]]
+      password: ['', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/)]]
     });
   }
 
@@ -44,7 +43,7 @@ export class Login {
       .subscribe({
         next: (response: LoginResponse) => {
           if (response.status == 'OK' && response.access_token) {
-            this.storageService.setItem('access_token', response.access_token);
+            this.storageService.setItem('access_token', JSON.stringify(response.access_token));
             this.router.navigate(['/dashboard']);
           }
         }
