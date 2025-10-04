@@ -11,7 +11,7 @@
     />
   </a>
 
-  <div class="w-full h-auto min-h-[calc(100vh-127.34px)] max-h-[calc(100vh-127.34px)] overflow-y-auto px-[25px] pb-[25px] pt-[15px] flex flex-col items-start justify-start gap-[5px]">
+  <div class="w-full h-auto min-h-[calc(100vh-127.34px)] max-h-[calc(100vh-127.34px)] overflow-y-auto p-[25px] flex flex-col items-start justify-start gap-[5px]">
     @for (sidebarItem of sidebarData; track $index) {
       @if (sidebarItem.link && sidebarItem.child.length < 1) {
         <app-sidebar-item 

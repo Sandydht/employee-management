@@ -2,7 +2,7 @@ export interface RegisterRequest {
   username: string;
   fullname: string;
   email: string;
-  phone_number: string;
+  phoneNumber: string;
   password: string;
 }
 
@@ -13,8 +13,8 @@ export interface RegisterResponse {
     username: string;
     email: string;
     fullname: string;
-    phone_number: string;
-    photo_url: string;
+    phoneNumber: string;
+    photoUrl: string;
     role: string;
   }
 }
@@ -26,7 +26,7 @@ export interface LoginRequest {
 
 export interface LoginResponse {
   status: string;
-  access_token: string;
+  accessToken: string;
 }
 
 export interface LogoutResponse {
@@ -34,7 +34,11 @@ export interface LogoutResponse {
   message: string;
 }
 
+export interface RefreshRequest {
+  userId: string;
+}
+
 export interface RefreshResponse {
   status: string;
-  access_token: string;
+  accessToken: string;
 }
