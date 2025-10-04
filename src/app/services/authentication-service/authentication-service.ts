@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { LoginRequest, RegisterRequest } from '../../models/authentication';
+import { LoginRequest, RefreshRequest, RegisterRequest } from '../../models/authentication';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-  baseUrl: string = environment.baseUrl;
+  private readonly baseUrl: string = environment.baseUrl;
 
   constructor(
     private readonly http: HttpClient
@@ -26,11 +26,7 @@ export class AuthenticationService {
     return this.http.post(`${this.baseUrl}/authentication/logout`, {});
   }
 
-  profile(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/authentication/profile`);
-  }
-
-  refresh(): Observable<any> {
-    return this.http.post(`${this.baseUrl}/authentication/refresh`, {});
+  refresh(payload: RefreshRequest): Observable<any> {
+    return this.http.post(`${this.baseUrl}/authentication/refresh`, payload);
   }
 }

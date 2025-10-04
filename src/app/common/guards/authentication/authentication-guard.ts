@@ -5,7 +5,7 @@ import { StorageService } from '../../../services/storage-service/storage-servic
 export const authenticationGuard: CanActivateFn = () => {
   const router = inject(Router);
   const storageService = inject(StorageService);
-  const isLoggedIn = storageService.getItem('access_token');
+  const isLoggedIn = storageService.getItem('accessToken');
 
   if (!isLoggedIn) {
     router.navigate(['/login']);

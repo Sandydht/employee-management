@@ -1,14 +1,27 @@
-<div class="w-full h-auto bg-[#f6f6f6] flex items-center justify-between px-[25px] py-[20px] gap-[10px]">
-  <div class="w-full h-auto flex flex-col items-start justify-start">
-    <p class="text-left text-[22px] leading-[28px] font-semibold text-[#4f4f4f]">
-      Welcome, Sarah!
-    </p>
-    <p class="text-left text-[14px] leading-[20px] font-semibold text-[#4f4f4f]">
-      Here's what's going on today
-    </p>
-  </div>
+<div class="w-full h-auto bg-[#f6f6f6] flex items-center justify-between px-[25px] py-[10px] gap-[10px]">
+  <div class="w-full h-auto"></div>
 
-  <div class="w-auto h-auto">
+  <div class="w-auto h-auto flex items-center justify-end gap-[5px]">
+    <button
+      type="button"
+      class="w-full h-full min-w-[44px] max-w-[44px] min-h-[44px] max-h-[44px] rounded-full flex items-center justify-center transition-all cursor-pointer hover:bg-gray-200"
+    >
+      <img 
+        src="assets/images/svg/notifications_none_gray_24px.svg"
+        alt="Logout icon"
+        loading="lazy"
+      />
+    </button>
+    <button
+      type="button"
+      class="w-full h-full min-w-[44px] max-w-[44px] min-h-[44px] max-h-[44px] rounded-full flex items-center justify-center transition-all cursor-pointer hover:bg-gray-200"
+    >
+      <img 
+        src="assets/images/svg/person_outline_gray_24px.svg"
+        alt="Logout icon"
+        loading="lazy"
+      />
+    </button>
     <button
       type="button"
       class="w-full h-full min-w-[44px] max-w-[44px] min-h-[44px] max-h-[44px] rounded-full flex items-center justify-center transition-all cursor-pointer hover:bg-gray-200"
@@ -27,6 +40,7 @@
   <app-confirmation-modal
     title="Logout Confirmation"
     message="Are you sure you want to log out? You will need to sign in again to continue."
+    [isShow]="isShowLogoutConfirmationModalBox"
     [isLoading]="isLoadingLogout"
     (cancelAction)="cancelLogoutConfirmationModalBox()"
     (confirmAction)="confirmLogoutConfirmationModalBox()"

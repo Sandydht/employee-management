@@ -42,8 +42,8 @@ export class Login {
     this.authenticationService.login(this.loginForm.value)
       .subscribe({
         next: (response: LoginResponse) => {
-          if (response.status == 'OK' && response.access_token) {
-            this.storageService.setItem('access_token', JSON.stringify(response.access_token));
+          if (response.status == 'OK' && response.accessToken) {
+            this.storageService.setItem('accessToken', JSON.stringify(response.accessToken));
             this.router.navigate(['/dashboard']);
           }
         }
